@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burrow theme documentation</title>
+<meta name="description" content="How to set up and customize the Burrow Shopify theme: theme settings, sections, product pages, filters, and FAQ.">
+<style>
+  :root { --forest:#38402e; --olive:#545849; --butter:#fbf6ab; --berry:#651e30; --blush:#ffd0ca; --cream:#e8e6d4; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:17px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; color:#2b2f24; background:#fbfaf3; }
+  header { background:var(--berry); color:var(--butter); padding:56px 20px 44px; }
+  header .wrap { max-width:960px; margin:0 auto; }
+  header h1 { margin:0 0 8px; font:400 clamp(2.2rem,5vw,3.4rem)/1.1 Georgia, serif; }
+  header p { margin:0; color:var(--blush); }
+  nav { position:sticky; top:0; z-index:5; background:var(--butter); border-bottom:1px solid #e3dc8d; }
+  nav .wrap { max-width:960px; margin:0 auto; padding:10px 20px; display:flex; flex-wrap:wrap; gap:6px 18px; font-size:.92rem; }
+  nav a { color:var(--berry); text-decoration:none; }
+  nav a:hover, nav a:focus-visible { text-decoration:underline; }
+  main { max-width:960px; margin:0 auto; padding:24px 20px 80px; }
+  h2 { margin:56px 0 12px; font:400 2rem/1.2 Georgia, serif; color:var(--berry); scroll-margin-top:60px; }
+  h3 { margin:28px 0 8px; font-size:1.15rem; color:var(--forest); }
+  table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:.95rem; }
+  th, td { padding:10px 12px; border-bottom:1px solid #e2e0cf; text-align:left; vertical-align:top; }
+  th { background:var(--cream); }
+  code { background:var(--cream); padding:1px 6px; border-radius:6px; font-size:.9em; }
+  .note { background:var(--butter); border-radius:14px; padding:14px 18px; margin:16px 0; }
+  details { border:1px solid #e2e0cf; border-radius:14px; padding:12px 16px; margin:10px 0; background:#fff; }
+  summary { cursor:pointer; font-weight:600; color:var(--forest); }
+  a { color:var(--berry); }
+  footer { background:var(--forest); color:var(--butter); padding:28px 20px; text-align:center; font-size:.9rem; }
+  footer a { color:var(--butter); }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Burrow theme documentation</h1>
+  <p>Version 1.0.0 · Everything you need to set up and customize your store.</p>
+</div></header>
+
+<nav aria-label="Documentation"><div class="wrap">
+  <a href="#start">Getting started</a><a href="#settings">Theme settings</a><a href="#header">Header and footer</a>
+  <a href="#sections">Sections</a><a href="#product">Product page</a><a href="#collection">Collections and search</a>
+  <a href="#cart">Cart</a><a href="#motion">Motion</a><a href="#faq">FAQ</a><a href="#support">Support</a>
+</div></nav>
+
+<main>
+<section id="start">
+  <h2>Getting started</h2>
+  <ol>
+    <li>In your Shopify admin, go to <strong>Online Store → Themes</strong>, find Burrow and click <strong>Customize</strong>.</li>
+    <li>Open <strong>Theme settings</strong> (gear icon) and upload your logo, choose your colors and fonts.</li>
+    <li>Create two menus in <strong>Online Store → Navigation</strong>: <code>main-menu</code> for the header and <code>footer</code> for the footer. Nested menu items appear as drop-down navigation.</li>
+    <li>On the home page, choose a collection for the <em>Best sellers</em> and <em>Product slider</em> sections, and add images to the hero and other image sections.</li>
+    <li>Create an <strong>About</strong> page and assign the <code>page.about</code> template, and a <strong>Contact</strong> page with the <code>page.contact</code> template.</li>
+  </ol>
+  <div class="note">Burrow doesn't include demo images. Sections show placeholders until you choose an image, so upload your own photos in <strong>Content → Files</strong> or directly from each image setting.</div>
+</section>
+
+<section id="settings">
+  <h2>Theme settings</h2>
+  <table>
+    <tr><th>Group</th><th>What you can change</th></tr>
+    <tr><td>Logo</td><td>Logo, logo on dark backgrounds (footer, loader, password and gift card pages), logo width and favicon. Landscape and portrait logos both work. Without a logo, your store name is shown.</td></tr>
+    <tr><td>Colors</td><td>Seven brand colors (forest, olive, sage, cream, butter, berry, blush) used for buttons and accents. Every section and card also has its own background and text color pickers.</td></tr>
+    <tr><td>Typography</td><td>Heading and body fonts from the Shopify font library, and heading size.</td></tr>
+    <tr><td>Cards</td><td>Corner radius for cards, images and panels.</td></tr>
+    <tr><td>Motion</td><td>Turn animations, page loader, page transitions, custom cursor and scroll progress bar on or off. Animations switch off automatically for visitors who prefer reduced motion.</td></tr>
+    <tr><td>Cart</td><td>Cart type: <em>Drawer</em> opens a side cart, <em>Page</em> goes to the cart page.</td></tr>
+    <tr><td>Social media</td><td>Links for Facebook, Instagram, TikTok and YouTube. Icons only show for links you add.</td></tr>
+  </table>
+</section>
+
+<section id="header">
+  <h2>Header and footer</h2>
+  <h3>Header</h3>
+  <p>Choose the main menu and the customer account menu, float the header over the page, make it sticky, hide it while scrolling down, and show search. The account icon uses Shopify's account component, which lets customers sign in and reach their orders without leaving the store. The <strong>Announcement bar</strong> rotates short messages above the header.</p>
+  <h3>Footer</h3>
+  <p>Add <em>Menu</em>, <em>Text</em> and <em>Newsletter</em> blocks. Footer settings control the background image, social icons, Follow on Shop, the country/region and language selectors, and payment icons. Selectors appear when your store sells in more than one country or language (set these up in <strong>Settings → Markets</strong> and <strong>Settings → Languages</strong>).</p>
+</section>
+
+<section id="sections">
+  <h2>Sections</h2>
+  <table>
+    <tr><th>Section</th><th>Use it for</th></tr>
+    <tr><td>Hero</td><td>Large opening image with heading, text, button, optional floating images, rotating badge and collar divider.</td></tr>
+    <tr><td>Pet categories</td><td>Up to five category cards. Each card links to a collection; if you leave the collection empty, a collection whose name matches the card title is used.</td></tr>
+    <tr><td>Best sellers</td><td>A large feature panel plus products from a collection.</td></tr>
+    <tr><td>Shop by category</td><td>Collection tiles, chosen by you or listed automatically.</td></tr>
+    <tr><td>Product slider</td><td>A horizontal row of products from a collection.</td></tr>
+    <tr><td>Featured product</td><td>One product with media, price, buy buttons, description, app blocks and Custom Liquid blocks.</td></tr>
+    <tr><td>Horizontal journey</td><td>Story panels that scroll sideways on desktop and swipe on mobile. Panels can link to collections.</td></tr>
+    <tr><td>Parallax banner</td><td>Large words over an image with a call-to-action card.</td></tr>
+    <tr><td>How it works</td><td>Three to six steps with icons.</td></tr>
+    <tr><td>Shop the look</td><td>An image with hotspots that open product cards.</td></tr>
+    <tr><td>Countdown promo</td><td>A promotion with a timer. The timer only shows when you set a real end date and hides when it passes.</td></tr>
+    <tr><td>Stats counter, Why choose us, Testimonials, FAQ</td><td>Trust and information sections.</td></tr>
+    <tr><td>Pet gallery</td><td>A photo grid; tiles without a photo show products from a collection.</td></tr>
+    <tr><td>Join the pack</td><td>Newsletter signup with optional floating images.</td></tr>
+    <tr><td>Video</td><td>YouTube, Vimeo or Shopify-hosted video with a cover image.</td></tr>
+    <tr><td>Image with text, Rich text, Scrolling text</td><td>General content sections.</td></tr>
+    <tr><td>Custom Liquid</td><td>Add app snippets or your own Liquid code on any template.</td></tr>
+    <tr><td>About sections</td><td>About hero, Scroll manifesto, Meet the pack (flip cards) and Delivery areas, used by the <code>page.about</code> template.</td></tr>
+  </table>
+</section>
+
+<section id="product">
+  <h2>Product page</h2>
+  <p>The product information panel is built from blocks you can reorder: vendor, title, price, buy buttons, description, text, share, Custom Liquid and app blocks.</p>
+  <ul>
+    <li><strong>Media:</strong> images, Shopify videos, YouTube/Vimeo videos and 3D models with “View in your space”. Selecting a variant shows its image.</li>
+    <li><strong>Variant options:</strong> color and image swatches appear automatically when your product options use swatches.</li>
+    <li><strong>Buy buttons block:</strong> quantity selector, dynamic checkout buttons, gift card recipient form, pickup availability, Shop Pay Installments and subscription options (selling plans) from your subscription app.</li>
+    <li><strong>Price:</strong> shows sale and compare-at prices, unit prices and whether tax is included.</li>
+    <li><strong>Recommendations:</strong> the product template includes a <em>Complementary products</em> section (set these in the Search and Discovery app) and a <em>Related products</em> section.</li>
+  </ul>
+</section>
+
+<section id="collection">
+  <h2>Collections and search</h2>
+  <p>Collection and search pages support filtering by availability, price, product type, vendor and variant options, plus sorting. Choose which filters appear in the <strong>Search and Discovery</strong> app. The collection header shows the collection title, description and image. Search shows products, articles and pages, and the header search shows instant results as you type.</p>
+</section>
+
+<section id="cart">
+  <h2>Cart</h2>
+  <p>The cart drawer shows line items, quantity controls, discounts, subscription details, unit prices, an optional free delivery progress bar and suggested products. The cart page adds order notes. Set the free delivery amount in the <strong>Cart drawer</strong> section.</p>
+</section>
+
+<section id="motion">
+  <h2>Motion and accessibility</h2>
+  <p>Scroll reveals, parallax, card tilt, magnetic buttons and the custom cursor are optional and can be switched off in <strong>Theme settings → Motion</strong>. All animations turn off for visitors who have reduced motion enabled on their device. Every interactive element works with a keyboard and shows a visible focus state.</p>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <details><summary>Why do I see gray placeholder images?</summary><p>Burrow doesn't ship with demo images. Choose an image in each section's image setting to replace the placeholder.</p></details>
+  <details><summary>How do I add drop-down menus?</summary><p>In Online Store → Navigation, drag menu items under another item in your main menu. Burrow supports up to three levels.</p></details>
+  <details><summary>Where do I change filters?</summary><p>Install and open Shopify's free Search and Discovery app, then choose the filters you want under Filters.</p></details>
+  <details><summary>How do I show subscriptions?</summary><p>Install a subscription app that uses Shopify selling plans. Purchase options then appear automatically in the buy buttons block.</p></details>
+  <details><summary>The country or language selector doesn't appear.</summary><p>Selectors only show when your store has more than one market or language, and when they're enabled in the footer settings.</p></details>
+  <details><summary>Can I turn off the animations?</summary><p>Yes. Go to Theme settings → Motion and switch off the effects you don't want, or turn off all animations at once.</p></details>
+  <details><summary>How do I change the colors of one section only?</summary><p>Select the section, then use its Background color and Text color pickers. Cards inside many sections have their own color pickers too.</p></details>
+  <details><summary>How do I add app content to a product page?</summary><p>In the product template, click Add block in Product information and choose your app's block, or use a Custom Liquid block.</p></details>
+</section>
+
+<section id="support">
+  <h2>Support</h2>
+  <p>Need help? Contact us through the <a href="REPLACE-WITH-SUPPORT-FORM-URL">support form</a>. We reply within two business days.</p>
+</section>
+</main>
+
+<footer>Burrow theme · Version 1.0.0</footer>
+</body>
+</html>
